@@ -1,5 +1,13 @@
-import { ADMIN_ROUTE, CART_ROUTE, HOME_ROUTE, SHOP_ROUTE } from './consts';
+import {
+  ADMIN_ROUTE,
+  CART_ROUTE,
+  HOME_ROUTE,
+  LOGIN_ROUTE,
+  REGISTRATION_ROUTE,
+  SHOP_ROUTE,
+} from './consts';
 import { Admin, Cart, Home, Shop } from '../pages';
+import Auth from '../pages/Auth';
 
 export const authRoutes = [
   {
@@ -18,11 +26,17 @@ export const publicRoutes = [
   {
     path: HOME_ROUTE,
     Element: Home,
-    role: 'USER',
   },
   {
     path: SHOP_ROUTE,
     Element: Shop,
-    role: 'USER',
+  },
+  {
+    path: LOGIN_ROUTE,
+    Element: Auth,
+  },
+  {
+    path: REGISTRATION_ROUTE,
+    Element: Auth,
   },
 ];

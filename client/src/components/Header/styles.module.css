@@ -1,0 +1,27 @@
+.container {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.logo {
+    font-family: inherit;
+    font-size: 2.875em;
+}
+
+.logo strong {
+    font-family: inherit;
+    font-weight: 800;
+}
+
+.menu {
+    display: flex;
+    gap: 1.25em;
+}
+
+.link {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 0.9375em;
+    color: var(--secondary-3);
+}
+
