@@ -1,0 +1,23 @@
+.navbar {
+    padding-top: 26px;
+    padding-bottom: 26px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.link {
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 1.25em;
+    line-height: 1;
+    color: var(--secondary-3);
+}
+
+.activeStyle {
+    color: red;
+}
+  
