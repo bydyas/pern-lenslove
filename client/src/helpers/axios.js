@@ -1,5 +1,9 @@
 import axios from 'axios';
 
+import useTokenStore from '../store/useTokenStore';
+
+const token = useTokenStore.getState().token;
+
 const host = axios.create({
   baseURL: import.meta.env.VITE_SERVER_API_URL,
 });
@@ -9,7 +13,7 @@ const authHost = axios.create({
 });
 
 const authInterceptor = (config) => {
-  config.header.authorization = `Bearer ${token}`;
+  config.headers.authorization = `Bearer ${token}`;
   return config;
 };
 

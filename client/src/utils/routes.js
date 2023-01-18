@@ -1,13 +1,13 @@
 import {
   ADMIN_ROUTE,
   CART_ROUTE,
+  HELP_ROUTE,
   HOME_ROUTE,
   LOGIN_ROUTE,
   REGISTRATION_ROUTE,
   SHOP_ROUTE,
 } from './consts';
-import { Admin, Cart, Home, Shop } from '../pages';
-import Auth from '../pages/Auth';
+import { Admin, Auth, Cart, Home, Shop, Help } from '../pages';
 
 export const authRoutes = [
   {
@@ -38,5 +38,9 @@ export const publicRoutes = [
   {
     path: REGISTRATION_ROUTE,
     Element: Auth,
+  },
+  {
+    path: HELP_ROUTE,
+    Element: Help,
   },
 ];
