@@ -18,36 +18,30 @@ export function useAuth() {
   const [isError, setIsError] = useState(false);
   const navigate = useNavigate();
 
-  const onAuth = async () => {
-    try {
-      const response = await check();
-      const userData = {
-        ...response,
-        roles: parseRoles(response.roles),
-      };
-      setUser(userData);
-      setIsAuth(true);
-      navigate(SHOP_ROUTE);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  const authWithEmaiAndPassword = async (type, credentials, roles) => {
+  const authWithEmailAndPassword = async (type, credentials, roles) => {
     setIsLoading(true);
     try {
       let response;
 
-      if (type === 'LOGIN') {
-        response = await login(credentials);
-      } else {
-        response = await registration({ ...credentials, roles });
+      switch (type) {
+        case 'LOGIN':
+          response = await login(credentials);
+          break;
+        case 'REGISTRATION':
+          response = await registration({ ...credentials, roles });
+          break;
+        case 'CHECK':
+          response = await check();
+          break;
+        default:
+          throw new Error('Invalid authorization type');
       }
 
       const userData = {
         ...response,
         roles: parseRoles(response.roles),
       };
+
       setUser(userData);
       setIsAuth(true);
       navigate(SHOP_ROUTE);
@@ -65,5 +59,5 @@ export function useAuth() {
     setToken('');
   };
 
-  return { authWithEmaiAndPassword, logOut, onAuth, isLoading, isError };
+  return { authWithEmailAndPassword, logOut, isLoading, isError };
 }

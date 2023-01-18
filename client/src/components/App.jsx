@@ -8,9 +8,13 @@ import AppRouter from './AppRouter';
 import Footer from './Footer';
 
 function App() {
-  const { onAuth } = useAuth();
+  const { authWithEmailAndPassword } = useAuth();
 
-  useEffect(() => onAuth, []);
+  useEffect(() => {
+    (async () => {
+      authWithEmailAndPassword('CHECK');
+    })();
+  }, []);
 
   return (
     <>

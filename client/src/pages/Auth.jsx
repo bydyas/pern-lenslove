@@ -22,14 +22,14 @@ function Auth() {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  const { authWithEmaiAndPassword, isLoading, isError } = useAuth();
+  const { authWithEmailAndPassword, isLoading, isError } = useAuth();
   const linkPath = authType === 'LOGIN' ? '/registration' : '/login';
   const linkTitle =
     authType === 'LOGIN'
       ? 'Do not have an account? Sign up'
       : 'Do you have already the account? Log in';
 
-  const onSubmit = (credentials) => authWithEmaiAndPassword(authType, credentials);
+  const onSubmit = (credentials) => authWithEmailAndPassword(authType, credentials);
 
   return (
     <div className="container">
