@@ -31,7 +31,6 @@
     line-height: 31px;
 }
 
-.btn .center {
+.btn .grow {
     flex-grow: 1;
-    text-align: center;
 }

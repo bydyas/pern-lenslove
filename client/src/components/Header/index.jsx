@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import useAuthStore from '../../store/useAuthStore';
-import { HOME_ROUTE, LOGIN_ROUTE } from '../../utils/consts';
+import useUserStore from '../../store/useUserStore';
+import { ADMIN_ROUTE, HELP_ROUTE, HOME_ROUTE, LOGIN_ROUTE } from '../../utils/consts';
 import DropDown from '../DropDown';
 
 import styles from './styles.module.css';
 
 function Header() {
+  const { roles } = useUserStore((state) => state.user);
   const isAuth = useAuthStore((state) => state.isAuth);
   const telNumber = '+47 333 78 901';
 
@@ -22,7 +24,11 @@ function Header() {
           <div className="stickyRight">
             <nav className={styles.menu}>
               <a href={'tel:' + telNumber}>{telNumber}</a>
-              <a href="/">Help</a>
+              {roles.includes('ADMIN') ? (
+                <Link to={ADMIN_ROUTE}>Manage</Link>
+              ) : (
+                <Link to={HELP_ROUTE}>Help</Link>
+              )}
               {isAuth ? <DropDown /> : <Link to={LOGIN_ROUTE}>Account</Link>}
             </nav>
           </div>

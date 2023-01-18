@@ -2,7 +2,10 @@
 
 :root {
   --secondary-3: #414141;
+  --secondary-2: #1b6271;
+  --secondary: #EADFD8;
   --primary: #025162;
+  --white: #EADFD8;
 }
 
 body {
@@ -34,6 +37,7 @@ a {
 .container {
   margin: 0 auto;
   max-width: 1440px;
+  height: 100%;
   padding-left: 115px;
   padding-right: 115px;
 }

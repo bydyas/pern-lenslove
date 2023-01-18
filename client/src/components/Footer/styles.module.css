@@ -1,0 +1,55 @@
+.footer {
+    width: 100%;
+    height: 454px;
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.grid {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    align-items: center;
+}
+
+.grid .col {
+    height: 255px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: inherit;
+    font-size: 2em;
+}
+
+.logo strong {
+    font-family: inherit;
+    font-weight: 800;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.block {
+    display: block;
+}
+
+.social {
+    display: flex;
+    gap: 16px;
+}
+
+.iconHolder {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var( --secondary-2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

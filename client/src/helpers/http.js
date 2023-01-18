@@ -1,8 +1,8 @@
-import { host } from './axios';
+import { host, authHost } from './axios';
 import jwt_decode from 'jwt-decode';
-import useAuthStore from '../store/useAuthStore';
+import useTokenStore from '../store/useTokenStore';
 
-const setToken = useAuthStore.getState().setToken;
+const setToken = useTokenStore.getState().setToken;
 
 const registration = async ({ email, password, roles }) => {
   const { data } = await host.post('api/user/registration', { email, password, roles: 'USER' });
@@ -19,7 +19,7 @@ const login = async ({ email, password }) => {
 };
 
 const check = async () => {
-  const { data } = await host.post('api/user/auth');
+  const { data } = await authHost.get('api/user/auth');
   const token = data.token;
   setToken(token);
   return jwt_decode(token);
