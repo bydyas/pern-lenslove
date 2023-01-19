@@ -7,7 +7,14 @@ function Hero() {
   return (
     <section>
       <div className={styles.container}>
-        <img src={BannerImg} alt="Banner" />
+        <div className={styles.content}>
+          <p className={styles.title}>Spring Sale</p>
+          <p className={styles.description}>Up to -40%</p>
+          <a className={`btn ${styles.button}`} href="/">
+            <span>See offer</span>
+          </a>
+        </div>
+        <img className={styles.banner} src={BannerImg} alt="Banner" />
       </div>
     </section>
   );
