@@ -71,3 +71,12 @@ a {
 .btn * {
   color: #FFFF;
 }
+
+.pageTitle {
+  padding-top: 112px;
+  padding-bottom: 80px;
+  font-size: 4.375em;
+  font-weight: 900;
+  text-align: center;
+  color: var(--primary);
+}

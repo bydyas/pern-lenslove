@@ -1,7 +1,47 @@
 
 .container {
- margin: 0 auto;
- background-color: var(--secondary);
- max-width: 1440px;
- text-align: right;
+    margin: 0 auto;
+    max-width: 1440px;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    background-color: var(--secondary);
+    position: relative;
+}
+
+.content {
+    margin-left: 112px;
+    color: var(--primary);
+}
+
+.title {
+    font-weight: 900;
+    font-size: 4.375em;
+}
+
+.description {
+    margin-top: 16px;
+    margin-bottom: 48px;
+    font-weight: 500;
+    font-size: 3.125em;
+}
+
+.button {
+    display: block;
+    width: 196px;
+    height: 62px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.button span {
+    font-weight: 700;
+    font-size: 1.25em;
+    line-height: 62px;
+}
+
+.banner {
+    position: absolute;
+    top: 0;
+    right: 0;
 }

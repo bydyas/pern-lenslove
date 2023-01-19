@@ -32,20 +32,22 @@ function Auth() {
   const onSubmit = (credentials) => authWithEmailAndPassword(authType, credentials);
 
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <h2>{authType}</h2>
-        <input {...register('email')} />
-        <p>{errors.email?.message}</p>
-        <input {...register('password')} type="password" />
-        <p>{errors.password?.message}</p>
-        {isError ? <p>{isError}</p> : null}
-        <Link to={linkPath}>
-          <p>{linkTitle}</p>
-        </Link>
-        {isLoading ? <p>{'Loading...'}</p> : <input type="submit" />}
-      </form>
-    </div>
+    <section>
+      <div className="container">
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="pageTitle">{authType}</div>
+          <input {...register('email')} />
+          <p>{errors.email?.message}</p>
+          <input {...register('password')} type="password" />
+          <p>{errors.password?.message}</p>
+          {isError ? <p>{isError}</p> : null}
+          <Link to={linkPath}>
+            <p>{linkTitle}</p>
+          </Link>
+          {isLoading ? <p>{'Loading...'}</p> : <input type="submit" />}
+        </form>
+      </div>
+    </section>
   );
 }
 
